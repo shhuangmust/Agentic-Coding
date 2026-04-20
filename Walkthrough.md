@@ -9,7 +9,7 @@
 ## 測試錄影記錄
 以下是遊戲過程的自動化測試錄影記錄 (WebP 格式)：
 
-![遊戲過程錄影](tetris_gameplay.webp)
+![遊戲過程錄影](tetris_demo.webp)
 
 ![測試完成畫面](tetris_gameplay_finished.png)
 
