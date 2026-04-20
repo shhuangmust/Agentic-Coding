@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄羅斯方塊 開發總結</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 30px; max-width: 800px; margin: auto; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        h1, h2 { color: #2c3e50; }
+        h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .recording { margin-top: 20px; text-align: center; }
+        img { max-width: 100%; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; }
+        .highlight { background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107; margin-bottom: 20px; }
+        ul { background: white; padding: 20px 40px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+    <h1>俄羅斯方塊 (Tetris) 開發總結</h1>
+    <p>我們已經成功完成了一款基於您需求的純 HTML、淺色主題、帶有音效的網頁版俄羅斯方塊。</p>
+
+    <h2>🌟 完成的功能與亮點</h2>
+    <ul>
+        <li><strong>純粹輕量：</strong> 所有程式碼（包含視覺樣式、遊戲邏輯、音效系統）均在 <code>index.html</code> 內一氣呵成。不依賴外部檔案，雙擊即可直接在瀏覽器遊玩。</li>
+        <li><strong>動態色彩設計：</strong> 採用了您指定的「淺色主題」，遊戲盤面採用略帶光影的灰白色調，而方塊則具備 7 種鮮豔色彩，並帶有微立體的陰影反光特效。</li>
+        <li><strong>程式化音效：</strong> 我們使用了強大的 <code>Web Audio API</code>，透過瀏覽器直接產生各項音效，讓移動、旋轉、下落與消除都有懷舊的電玩回饋感。</li>
+        <li><strong>豐富的操作：</strong>
+            <ul>
+                <li>除了預設的箭頭控制。</li>
+                <li>新增了 <code>Z</code> 鍵作為「向左旋轉」的備案操作。</li>
+                <li><code>空白鍵</code> 提供瞬間下落 (Hard Drop) 機制。</li>
+            </ul>
+        </li>
+        <li><strong>遊戲機制：</strong> 具備分數計算（支援連消加成）、等級系統（隨等級提升下落速度增加），以及右上角的預覽功能 (Next Piece)。</li>
+    </ul>
+
+    <h2>🕹️ 如何遊玩與驗證</h2>
+    <ul>
+        <li>開啟您的檔案總管，導航至 <code>d:\Course\114-2\DeepLearning\russia</code> 資料夾。</li>
+        <li>直接雙擊 <code>index.html</code>。您的預設瀏覽器（如 Chrome, Edge 或 Firefox）便會開啟該頁面。</li>
+        <li>點擊畫面上的 <strong>「開始遊戲」</strong> 按鈕（這非常重要，因為瀏覽器要求使用者先有互動，才能啟用音效播放功能）。</li>
+        <li>使用以下按鍵進行操作：
+            <ul>
+                <li>⬅️ ➡️：左右平移</li>
+                <li>⬇️：加速下墜 (Soft drop)</li>
+                <li>⬆️：順時針旋轉 (右旋)</li>
+                <li><code>Z</code>：逆時針旋轉 (左旋)</li>
+                <li><code>空白鍵</code>：瞬間掉落 (Hard drop)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="highlight">
+        <strong>💡 開發者備註：</strong> 此版本包含了「踢牆 (Wall kick)」的初步機制。在部分貼牆時，嘗試旋轉方塊，程式會試圖幫方塊往旁邊挪動一格來完成旋轉動作，提升遊玩手感。
+    </div>
+
+    <h2>🎥 測試過程錄影</h2>
+    <p>以下為遊戲的自動測試運作展示錄影 (WebP格式動畫)：</p>
+    <div class="recording">
+        <img src="tetris_demo.webp" alt="遊戲測試錄影">
+    </div>
+</body>
+</html>
